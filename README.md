@@ -185,7 +185,23 @@ void load_script() {
 
 ````
 
-ConsoleBox.cpp
+      *ConsoleBox.cpp*
+
+#include "ConsoleBox.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void ConsoleBox::new_text() {
+    cout << "[ConsoleBox]: Nuevo texto cargado.\n";
+}
+
+void ConsoleBox::set_text(const string& text) {
+    cout << "[ConsoleBox]: Contenido cargado:\n";
+    cout << text << "\n";
+}
+
 
 ````
 
