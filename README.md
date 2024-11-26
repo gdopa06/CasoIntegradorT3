@@ -132,7 +132,81 @@ void load_script()
   <p style="font-size: 12px; line-height: 1.4;">
 
   A primera vista, el código está bastante bien estructurado, además, no presenta ningún "error" ni "warning".
-    
+    <details>
+    <summary>CODE</summary>
+  ````
+    *ScriptLoader.cpp*
+
+#include "ScriptLoader.h"
+#include "../ConsoleBox/ConsoleBox.h"
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+struct ColorConsole {
+    static constexpr const char* fg_blue = "\033[34m";
+    static constexpr const char* reset = "\033[0m";
+};
+
+// Uso de un puntero único para evitar fugas de memoria
+unique_ptr<ConsoleBox> consoleBox = make_unique<ConsoleBox>();
+
+void load_script(const string& filename, bool show_script) {
+    try {
+        ifstream file(filename, ios::binary);
+        if (!file.is_open()) {
+            cerr << "Error: No se pudo abrir el archivo '" << filename << "'." << endl;
+            return;
+        }
+
+        string script((istreambuf_iterator<char>(file)), istreambuf_iterator<char>());
+
+        if (show_script) {
+            cout << ColorConsole::fg_blue << script << ColorConsole::reset << endl;
+        }
+
+        consoleBox->new_text();
+        consoleBox->set_text(script);
+    } catch (const exception& e) {
+        cerr << "Error: Ocurrió un problema durante la lectura del archivo. Detalles: " << e.what() << endl;
+    } catch (...) {
+        cerr << "Error: Ocurrió un problema inesperado durante la lectura del archivo." << endl;
+    }
+}
+void load_script() {
+    cout << "Introduce el nombre del archivo: ";
+    string filename;
+    getline(cin, filename);
+    load_script(filename, true);
+}
+````
+
+````
+
+      *ConsoleBox.cpp*
+
+#include "ConsoleBox.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void ConsoleBox::new_text() {
+    cout << "[ConsoleBox]: Nuevo texto cargado.\n";
+}
+
+void ConsoleBox::set_text(const string& text) {
+    cout << "[ConsoleBox]: Contenido cargado:\n";
+    cout << text << "\n";
+}
+
+
+````
+
+
+  </details>
   </p>
 </details>
 
