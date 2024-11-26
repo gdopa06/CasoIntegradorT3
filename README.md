@@ -129,7 +129,7 @@ void load_script()
 <details>
   <summary>URL</summary>
   <p style="font-size: 12px; line-height: 1.4;">
-  [https://github.com/gdopa06/CasoFinalIntegrador_T3.git](https://github.com/gdopa06/CasoIntegradorT3.git)
+  https://github.com/gdopa06/CasoIntegradorT3.git
   
   </p>
 </details>
