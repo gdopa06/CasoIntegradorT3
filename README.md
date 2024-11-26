@@ -128,7 +128,7 @@ void load_script()
 </details>
 
 <details>
-  <summary>RESOLUCIÓN: </summary>
+  <summary>RESOLUCIÓN por Michael Rea: </summary>
   <p style="font-size: 12px; line-height: 1.4;">
 
   A primera vista, el código está bastante bien estructurado, además, no presenta ningún "error" ni "warning".
