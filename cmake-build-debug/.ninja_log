@@ -1,0 +1,5 @@
+# ninja log v6
+0	246	1732618140014095846	CMakeFiles/CasoIntegradorT3.dir/main.cpp.o	8c95c62ba024dca5
+1	614	1732618140015114421	CMakeFiles/CasoIntegradorT3.dir/ConsoleBox/ConsoleBox.cpp.o	c28def79175b328f
+2	616	1732618140015550042	CMakeFiles/CasoIntegradorT3.dir/ScriptLoader/ScriptLoader.cpp.o	1f929e2e6a5438c6
+616	719	1732618140629588630	CasoIntegradorT3	966f08071d5e35d7
